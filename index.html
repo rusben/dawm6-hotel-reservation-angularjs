@@ -28,24 +28,28 @@
   <!-- Controllers-->
   <script src="js/app.js" type="text/javascript" xml:space="preserve"></script>
   <script src="js/controller/generalFunctions.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/controller/hotelMainController.js" type="text/javascript" xml:space="preserve"></script>
   <script src="js/controller/hotelReservationController.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/controller/hotelReviewsController.js" type="text/javascript" xml:space="preserve"></script>
 </head>
-<body class="container">
+<body class="container" ng-controller="hotelMainController as hotelMainCtrl">
   <div class="imageDiv">
     <img src="images/hotel.jpg" id='logo' width="300" height="240" /></br>
   </div>
-  <div id="mainMenu" class="container well" ng-controller="hotelReservationController as hotelResCtrl">
+  <div id="mainMenu" class="container well">
     <h1>Welcome to the 50's hotel</h1>
     <div id="mainOptions" class="form-horizontal">
       <a href="#" ng-click="showAction=1">Room reservation</a>
       <span>  --  </span>
       <a href="#" ng-click="showAction=2">Hotel reviews</a>
     </div>
-    <div id="reservation" class="form-horizontal" ng-show="showAction==1">
+    <div id="reservation" class="form-horizontal" ng-show="$parent.showAction==1"
+     ng-controller="hotelReservationController as hotelResCtrl">
       <hotel-reservation-form></hotel-reservation-form>
     </div>
 
-    <div id="reviews" class="form-horizontal" ng-show="showAction==2">
+    <div id="reviews" class="form-horizontal" ng-show="$parent.showAction==2"
+    ng-controller="hotelReviewsController as hotelReviewsCtrl">
       <hotel-reviews-form></hotel-reviews-form>
     </div>
   </div>

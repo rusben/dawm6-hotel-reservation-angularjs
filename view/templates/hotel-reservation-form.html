@@ -11,11 +11,12 @@
 				</div>
 				<label class="col-sm-2 control-label" for="formGroup">Name *</label>
 				<div class="col-sm-4">
-					<input class="form-control" type="text" ng-model="reservation.name" ng-pattern="/^[A-Z][A-Za-z]*$/" required />
+					<input class="form-control" type="text" ng-model="reservation.name"
+            ng-pattern="/^[A-Z][A-Za-z]*$/" required />
 				</div>
 				<label class="col-sm-2 control-label" for="formGroup">Last name *</label>
 				<div class="col-sm-4">
-					<input class="form-control" type="text"  required />
+					<input class="form-control" type="text" required />
 				</div>
 				<label class="col-sm-2 control-label" for="formGroup">Address 1*</label>
 				<div class="col-sm-4">
@@ -145,11 +146,14 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="formGroup"></label>
 				<div class="col-sm-4">
-					<button class="btn btn-success" ng-disabled="reservationManagement.$invalid || !validDates"> Submit </button>
+					<button type="submit" class="btn btn-success"
+          ng-disabled="reservationManagement.$invalid || !validDates">
+          Submit </button>
 				</div>
 				<div class="form-group col-sm-6">
 					<label>
-						<input class="btn btn-default btn-primary btn-block" type="button" value="Back" >
+						<input class="btn btn-default btn-primary btn-block"
+            type="button" value="Back" ng-click="$parent.showAction=0" >
 					</label>
 				</div>
 			</div>

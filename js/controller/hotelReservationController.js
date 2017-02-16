@@ -12,11 +12,7 @@ $(document).ready(function () {
 		$scope.reservation.setCheckInDate(new Date());
 		$scope.reservation.setCheckOutDate((new Date()).setDate((new Date()).getDate() + 1));
 
-
-		;
-
 		//Scope variables
-		$scope.showAction ;
 		$scope.validDates = true;
 		$scope.specialRequests= ["Breakfast in the room", "Dinner on the roof ", "Romantic visit of the city"];
 		$scope.checkInTime = ["00:00", "01:00","02:00"];
@@ -82,11 +78,9 @@ $(document).ready(function () {
 		this.submit = function () {
 			console.log($scope.reservation);
 
-
 			$scope.reservation = new reservationObj();
-
 			$scope.reservationManagement.$setPristine();
-			$scope.showAction = 0;
+			$scope.$parent.showAction = 0;
 		};
 
 	}]);
